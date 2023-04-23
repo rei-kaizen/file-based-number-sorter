@@ -19,14 +19,22 @@ class EvodSort:
                 if num % 2 == 0:
                     #add the numbers to the even list
                     self.even.append(num)
-                    #write the numbers to the  even file
-                    even_file.write(str(num) + "\n")
                 else:
                     #add the numbers to the odd list
                     self.odd.append(num)
-                    #write the numbers to the odd file
-                    odd_file.write(str(num) + "\n")
-                    
+ 
+        #sort even and odd numbers in ascending order
+        self.even.sort()
+        self.odd.sort()
+
+        for num in self.even:
+            #write the numbers to the  even file
+            even_file.write(str(num) + "\n")
+
+        for num in self.odd:
+            #write the numbers to the  even file
+            odd_file.write(str(num) + "\n")       
+
         #close all the files
         numbers_file.close()
         even_file.close()
