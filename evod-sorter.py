@@ -15,8 +15,19 @@ class EvodSort:
         odd_file.close()
 
 #loop through the line in the file
-#loop through the numbers
-#assess if even or odd
+    def evod_filter(self, numbers_file):
+        """Filter the odd and even number in numbers_file"""
+        for line in numbers_file:
+            #loop through the numbers
+            for num in line.split():
+                num = int(num)
+                #assess if even or odd
+                if num % 2 == 0:
+                    #add the numbers to the even list
+                    self.even.append(num)
+                else:
+                    #add the numbers to the odd list
+                    self.odd.append(num)
 ##if even, add the numbers to the even list then write the numbers to the  even file
 ##else, add the numbers to the odd list  write the numbers to the odd file
 
